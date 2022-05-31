@@ -6,5 +6,7 @@
 //  let num4 = Math.round(num1); Aredonda parao numero mais perto
 // console.log(Math.max(1,2,3,5,8,1000)) pega o maior
 // console.log(Math.min(1,2,3,5,8,1000)) pega o menor
-const aliatorio = Math.round( Math.random() * 10 - 2)
- console.log(aliatorio)
+// const aliatorio = Math.round( Math.random() * 10) número aliatorio
+
+
+//  console.log(aliatorio)
