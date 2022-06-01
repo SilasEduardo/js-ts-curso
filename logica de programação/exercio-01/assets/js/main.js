@@ -44,12 +44,13 @@ enviar.addEventListener('click', ()=>{
     let peso = document.querySelector('#peso')
     let altura = document.querySelector('#altura')
 
-
-
-    
     peso = parseFloat(peso.value)
     altura = parseFloat(altura.value)
+
+
    let resultado = peso/(altura * altura)
+   
+
    
    if(vetificaIMC(resultado) === 'Valor Invalido'){
        output.classList = 'output2'
