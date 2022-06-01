@@ -1,6 +1,5 @@
-let peso = document.querySelector('#peso')
-let altura = document.querySelector('#altura')
 let form = document.querySelector('form')
+let enviar = document.querySelector('#enviar')
 let output = document.querySelector('#output')
 let msg = ''
 
@@ -36,8 +35,18 @@ function vetificaIMC(value){
     return msg;
 }
 
-form.addEventListener('submit', (event)=>{
+form.addEventListener('submit',  (event)=>{
     event.preventDefault()
+});
+
+
+enviar.addEventListener('click', ()=>{
+    let peso = document.querySelector('#peso')
+    let altura = document.querySelector('#altura')
+
+
+
+    
     peso = parseFloat(peso.value)
     altura = parseFloat(altura.value)
    let resultado = peso/(altura * altura)
@@ -48,5 +57,6 @@ form.addEventListener('submit', (event)=>{
    }else{
     output.classList = 'output'
     output.innerHTML = vetificaIMC(resultado.toFixed(1))
-   }
-})
+   };
+
+});
