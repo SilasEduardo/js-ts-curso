@@ -37,7 +37,7 @@
 // function getMonth(dayMonth){
 //     let dayMonthText = ['Janeiro', 'fevereiro', 'Março','Abril','Maio','Junho','Julho',        'Agosto','Setembro','Outrubo','Novembro','Desembro']
 
-reut
+// let resultado =  dayMonthText[dayMonth]
     
 
 //    
