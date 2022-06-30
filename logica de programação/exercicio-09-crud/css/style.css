@@ -1,0 +1,76 @@
+
+.container{
+    width: 100%px;
+    height: 500px;
+    color: green;
+}
+
+.title{
+   text-align: center;
+   font-size: 4em;
+}
+
+.nameInput{
+    color: green;
+    font-size: 2em;
+    position: relative;
+    top: -5px;
+    left: 150px;
+}
+.flex{
+    
+    display: flex;
+    align-items: center;;
+    
+}
+.flex p{
+    display: flex;
+    align-items: center;
+    font-size: 2.3em;
+    
+}
+
+
+.titleUser{
+    font-size: 2em;
+    margin-right: 2px;
+}
+
+.flex input{
+    width: 50%;
+    border-left: 0ch;
+    border-right: 0ch;
+    border-top: 0ch;
+    outline: none;
+}
+
+.flex button{
+    padding: 3px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: green;
+    border-color: green;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    position: relative;
+    top: -5px;
+    margin-left: 5px;
+}
+
+.listUser{
+    border: solid 1px;
+    width: 500px;
+    height: 500px;
+   
+    
+}
+
+
+.titloList{
+    text-align: center;
+}
+
+.listUser p{
+    margin-left: 5px;
+}
