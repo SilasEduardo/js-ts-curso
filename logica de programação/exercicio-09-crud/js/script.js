@@ -6,22 +6,25 @@ let delet = document.querySelector('.flex')
 
 let listUser = []
 
+
 function createUser(user){
-     `<di class="flex"><p>${user}</p> <div><button id="edit"><img width="20px" src="./img/delete.png" ></button> <button onclick="deleteItem()"><img width="20px" src="./img/delete.png" ></button></div>`
+    return `<di class="flex"><p>${user}</p> <div><button id="edit"><img width="20px" src="./img/delete.png" ></button> <button onclick="deleteItem1()"><img width="20px" src="./img/delete.png" ></button></div>`
   }
 usuario.addEventListener('keypress', (event)=>{
     if(event.key === 'Enter'){
-        listUser.push(usuario.value)
-      showUser.innerHTML += createUser(listUser.pop())
-      usuario.value = ''
+        listUser.push(createUser(usuario.value))
+        showUser.innerHTML += listUser.pop()
+        usuario.value = ''
 
     }
+    
+
+    return showUser
 } )
 
 
-function deleteItem(){
-  listUser.pop() = ''
-}
+
+
 
 
 
