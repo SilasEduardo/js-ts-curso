@@ -24,6 +24,4 @@ function falaFrase(comeco){
 }
 
 const olaMundo = falaFrase('olá')
-
-
 console.log(olaMundo('mundo'))
