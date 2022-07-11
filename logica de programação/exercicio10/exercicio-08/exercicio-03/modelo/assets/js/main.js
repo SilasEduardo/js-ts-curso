@@ -7,7 +7,6 @@ function creaLi(){
 }
 
 inputTarefa.addEventListener('keypress', (event)=>{
-
    if(event.key === 'Enter'){
       if(!inputTarefa.value)return;
     criaTarefa(inputTarefa.value)

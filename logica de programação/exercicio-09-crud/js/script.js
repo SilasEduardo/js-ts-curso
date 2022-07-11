@@ -1,30 +1,74 @@
-let  usuario = document.querySelector('#usuario')
-let showUser = document.querySelector('#showUser')
-let delet = document.querySelector('.flex')
+const inputTarefa = document.querySelector('#usuario')
+const btnTarefa = document.querySelector('#cadastrar')
+const tarefa = document.querySelector('#showUser')
 
 
-
-let listUser = []
-
-
-function createUser(user){
-    return `<di class="flex"><p>${user}</p> <div><button id="edit"><img width="20px" src="./img/delete.png" ></button> <button onclick="deleteItem1()"><img width="20px" src="./img/delete.png" ></button></div>`
-  }
-usuario.addEventListener('keypress', (event)=>{
+function creaLi(){
+    const li = document.createElement('li')
+    return li
+ }
+ 
+ inputTarefa.addEventListener('keypress', (event)=>{
+ 
     if(event.key === 'Enter'){
-        listUser.push(createUser(usuario.value))
-        showUser.innerHTML += listUser.pop()
-        usuario.value = ''
-
+       if(!inputTarefa.value)return;
+     criaTarefa(inputTarefa.value)
     }
-    
-
-    return showUser
-} )
-
-
-
-
-
-
-
+    })
+ function criaTarefa(tarefaText){
+    const li = creaLi()
+    li.innerHTML = `${tarefaText}`
+    tarefa.appendChild(li)
+    limpaImput()
+    criaBotaoApagar(li)
+    salvarTarefas();
+ }
+ 
+ function limpaImput(){
+    inputTarefa.value = ''
+    focus(inputTarefa)
+ }
+ function criaBotaoApagar(li){
+    li.innerText += ' ';
+    const botaoApagar = document.createElement('button');
+    botaoApagar.innerText = 'Apagar';
+    botaoApagar.setAttribute('class', 'apagar')
+    li.appendChild(botaoApagar)
+ }
+ 
+ btnTarefa.addEventListener('click', (e)=>{
+   if(!inputTarefa.value)return;
+     criaTarefa(inputTarefa.value)
+ });
+ 
+ document.addEventListener('click', (e)=>{
+    const el = e.target
+    if(el.classList.contains('apagar')){
+       el.parentElement.remove()
+       salvarTarefas()
+    }
+ });
+ 
+ 
+ function salvarTarefas(){
+    const liTarefas = tarefa.querySelectorAll('li');
+    const listaTarefas = [];
+ 
+    for(let tarefas of liTarefas){
+       let tarefaTexto = tarefas.innerText;
+       tarefaTexto = tarefaTexto.replace('Apagar', '').trim();
+       listaTarefas.push(tarefaTexto)
+    }
+ 
+    const tarefasJSON = JSON.stringify(listaTarefas)
+    localStorage.setItem('tarefaz', tarefasJSON);
+ }
+ function addTarefazSalvas(){
+    const tarefas = localStorage.getItem('tarefaz')
+    const listaDetarefas = JSON.parse(tarefas)
+    for(let tarefa of listaDetarefas){
+       criaTarefa(tarefa)
+    }
+ }
+ 
+ addTarefazSalvas()
