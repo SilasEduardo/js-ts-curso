@@ -20,7 +20,7 @@ function f2(callback2){
 function f3(callback3){
     setTimeout(()=>{
         if(callback3) callback3()
-        console.log('F3')
+        console.log('ola, mundo!')
     }, aliatorio())
 }
 
@@ -32,6 +32,7 @@ function callback1(){
 function callback2(){
     f3(callback3)
 }
+
 function callback3(){
-    console.log('mwlhores do mundo!')
+    console.log('F3')
 }

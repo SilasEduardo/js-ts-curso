@@ -38,7 +38,7 @@ function f3(callback){
 
 
 f1(callbackf1);
-
+ 
 function callbackf1(){
     f2(callbackf2)
 }
