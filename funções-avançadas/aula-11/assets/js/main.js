@@ -43,7 +43,7 @@ function CreateCalculator() {
         try{
             if(!calculate){
                 alert('Conta Invalida!');
-                return
+                return;
             }
             display.value = calculate
 
@@ -56,3 +56,4 @@ const calculator = new CreateCalculator()
 
 calculator.init()
 
+ 
