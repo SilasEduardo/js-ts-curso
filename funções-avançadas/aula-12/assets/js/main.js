@@ -36,7 +36,7 @@ function Calculadora(){
                 return
             }
         this.display.value = conta
-        }catch(e){
+        }catch(e){ 
             console.log(e)
 
         }
